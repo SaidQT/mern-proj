@@ -25,7 +25,7 @@ const Footer = () => {
       >
         <Container>
           <Typography variant="body2" sx={{ mb: 1 }}>
-            © 2024 Quizzes Hub. All rights reserved.
+            © 2024 Quizizz Hub. All rights reserved.
           </Typography>
           <Typography variant="body2">
             Follow us on:
