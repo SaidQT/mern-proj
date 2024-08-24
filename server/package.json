@@ -20,8 +20,8 @@
     "mongoose": "^8.5.3",
     "mongoose-sequence": "^6.0.1",
     "react-chartjs-2": "^5.2.0",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.1",
+    "socket.io": "^4.7.5"
   },
   "description": ""
-
 }

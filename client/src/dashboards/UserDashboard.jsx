@@ -7,11 +7,16 @@ import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import styles from './Quizzes.module.css';
 import axios from 'axios';
+import io from 'socket.io-client';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const socket = io('http://localhost:8000'); // Replace with your server URL
 
 const Quizzes = () => {
   const [quizzes, setQuizzes] = useState([]);
   const [isQuizActive, setIsQuizActive] = useState(false);
-  const [timer, setTimer] = useState(0); // Start with a 0 timer
+  const [timer, setTimer] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [selectedQuizId, setSelectedQuizId] = useState(null);
@@ -30,6 +35,24 @@ const Quizzes = () => {
       }
     };
     fetchQuizzes();
+
+    socket.on('quizAdded', (newQuiz) => {
+      setQuizzes((prevQuizzes) => [...prevQuizzes, newQuiz]);
+
+      toast.info(`New quiz added: ${newQuiz.title}`, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        onClick: () => window.location.href = `/user/dashboard/quiz/${newQuiz._id}`,
+      });
+    });
+
+    return () => {
+      socket.off('quizAdded');
+    };
   }, []);
 
   useEffect(() => {
@@ -42,14 +65,14 @@ const Quizzes = () => {
         setTimer((prevTimer) => prevTimer - 1);
       }, 1000);
 
-      return () => clearInterval(interval); // Clean up the interval on unmount or before the next effect runs
+      return () => clearInterval(interval);
     }
   }, [timer, isQuizActive, selectedQuizId, navigate]);
 
   const startQuiz = (quizId) => {
-    setSelectedQuizId(quizId); // Store the selected quiz ID
-    setTimer(5); // Set the timer to 5 seconds or your preferred duration
-    setIsQuizActive(true); // Activate the quiz
+    setSelectedQuizId(quizId);
+    setTimer(5);
+    setIsQuizActive(true);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -58,6 +81,7 @@ const Quizzes = () => {
 
   return (
     <div className={styles.quizzesContainer}>
+      <ToastContainer /> {/* Ensure the ToastContainer is rendered */}
       {!isQuizActive ? (
         <>
           <h1 className={styles.title}>Test Your Knowledge of Development Languages</h1>
@@ -79,7 +103,7 @@ const Quizzes = () => {
                     <h3>{quiz.title}</h3>
                     <button 
                       className={styles.quizButton} 
-                      onClick={() => startQuiz(quiz._id)} // Start quiz with the selected quiz ID
+                      onClick={() => startQuiz(quiz._id)}
                     >
                       Take a Quiz
                     </button>
