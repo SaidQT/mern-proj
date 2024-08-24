@@ -1,0 +1,56 @@
+.curtain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.curtain-left,
+.curtain-right {
+    width: 50%;
+    height: 100%;
+    background-image: url('https://wallpapers.com/images/hd/purple-curtains-1920-x-1080-wallpaper-mum22q9qa9j834sj.jpg'); /* Replace with your real image URL */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.1s ease-in-out; /* Smooth opening animation */
+}
+
+.curtain-left {
+    transform-origin: left center;
+}
+
+.curtain-right {
+    transform-origin: right center;
+}
+
+.open .curtain-left {
+    transform: translateX(-100%); /* Move left curtain out of view */
+}
+
+.open .curtain-right {
+    transform: translateX(100%); /* Move right curtain out of view */
+}
+
+/* Optional: add shadow effect for a more realistic curtain */
+.curtain-left::before,
+.curtain-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px; /* Adjust based on your preference */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.curtain-left::before {
+    left: 100%;
+}
+
+.curtain-right::before {
+    right: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.3), transparent);
+}
