@@ -17,7 +17,7 @@ const Footer = () => {
           width: '100%',
           bgcolor: 'rgba(108, 18, 108, 0.9)',
           color: 'white',
-          py: 3,
+          py: 2,
           textAlign: 'center',
           position: 'relative',
           bottom: 0,
@@ -25,7 +25,7 @@ const Footer = () => {
       >
         <Container>
           <Typography variant="body2" sx={{ mb: 1 }}>
-            © 2024 Quizizz Hub. All rights reserved.
+            © 2024 Quizzes Hub. All rights reserved.
           </Typography>
           <Typography variant="body2">
             Follow us on:
