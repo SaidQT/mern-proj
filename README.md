@@ -6,6 +6,20 @@ The Quizzes Platform is an interactive web-based application designed for educat
 
 ### Front-End:
 
-- **Frameworks & Libraries**: React, React DOM, Vite.
+- **Frameworks & Libraries**: React.js, React DOM, Vite.
 - **Styling**: Material UI (MUI), Styled Components, MDB React UI Kit.
 - **Form Handling**: React Hook Form.
+- **Animations & Interactions**: Framer Motion, React Beautiful DnD, Swiper, React Spring, React Parallax.
+- **Data Visualization**: Chart.js, React charts.js.
+- **Icons & Fonts**: FontAwesome, React Icon.
+- **Utilities**: Axios, React Router DOM, React Toastify, Typewriter Effect, React Typewriter, React Intersection Observer, React Typed, React Typewriter Effect.
+- **Real-time Communication**: Socket.io.
+
+### Back-End:
+
+- **Core Technologies**: Node.js, Express.js.
+- **Database**: MongoDB, Mongoose.
+- **Authentication & Security**: JWT (JSON Web Token), Bcrypt, Bcryptjs, Cors, Dotenv.
+- **Real-time Communication**: Socket.io.
+
+## Features:
