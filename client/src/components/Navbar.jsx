@@ -40,7 +40,7 @@ const Navbar = () => {
               }
             }}
           >
-            <img src={gifPaths.home} alt="Home" style={{ height: 32, width: 32 }} />
+            <img src={gifPaths.home} alt="Home" style={{ height: 55, width: 55, borderRadius: '100%' }} />
           </Box>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Quizizz
