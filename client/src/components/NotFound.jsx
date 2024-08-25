@@ -16,7 +16,7 @@ const NotFound = () => {
     >
       <Box
         component="img "
-        src={error}
+        src={ error }
         alt="404 Error"
         sx={{ maxWidth: '80%', height: '60%', marginBottom: 4 }}
       />
