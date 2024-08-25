@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import Laith from './laith.png';
 import Ola from './ola.png';
+import Said from './said.jpg'
 import Moon from './moon.webp';
 import background2 from './background2.jpeg';
 
@@ -136,6 +137,14 @@ const About = () => {
                 style={{ width: '150px', borderRadius: '10px' }}
               />
               <p>Ola Jaafreh</p>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <img
+                src={Said}
+                alt="Said"
+                style={{ width: '150px', borderRadius: '10px', height:'140px'}}
+              />
+              <p>Said Abu-Qtaish</p>
             </div>
           </div>
         </ParallaxLayer>
