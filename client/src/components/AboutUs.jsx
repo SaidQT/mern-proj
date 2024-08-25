@@ -185,7 +185,7 @@ const AboutUs = () => {
           </TeamMember>
           <TeamMember>
             <TeamImage src={profile} alt="Saeed Iqtaish" />
-            <TeamName className={styles.teamName}>Saeed Iqtaish</TeamName>
+            <TeamName className={styles.teamName}>Said Qtaish</TeamName>
           </TeamMember>
         </TeamContainer>
       </Section>
