@@ -16,7 +16,7 @@ const CreateQuiz = () => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState({
     title: "",
-    options: [{ option: "", isCorrect: false }],
+    options: [{ option: "" , isCorrect: false }],
     explanation: "",
   });
   const [loading, setLoading] = useState(false);

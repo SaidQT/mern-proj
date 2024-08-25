@@ -124,7 +124,7 @@ const TakeQuizPage = () => {
       {!showResults ? (
         <>
           {quiz.questions.length > 0 && (
-            <Card className={styles.questionCard} sx={{ marginBottom: '20px' }}>
+            <Card className={styles.questionCard} sx={{ margin: '30px 0' }}>
               <CardContent>
                 <Typography variant="h5" sx={{ marginBottom: '20px' }}>
                   {quiz.questions[currentQuestionIndex]?.title}

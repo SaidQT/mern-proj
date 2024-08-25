@@ -17,7 +17,7 @@ const Footer = () => {
           width: '100%',
           bgcolor: 'rgba(108, 18, 108, 0.9)',
           color: 'white',
-          py: 3,
+          py: 2,
           textAlign: 'center',
           position: 'relative',
           bottom: 0,
