@@ -1,44 +1,46 @@
 .heroSection {
-    background: linear-gradient(rgba(0, 0, 0, 0.5),
-            rgba(0, 0, 0, 0.9)),
-        url('https://img.freepik.com/free-photo/abstract-dark-background-with-purple-lines-generative-ai_169016-30670.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724025600&semt=ais_hybrid') no-repeat center center;
+    background: linear-gradient(
+         rgba(0, 0, 0, 0.5), 
+         rgba(0, 0, 0, 0.9)
+      ), 
+      url('https://img.freepik.com/free-photo/abstract-dark-background-with-purple-lines-generative-ai_169016-30670.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1724025600&semt=ais_hybrid') no-repeat center center;
     background-size: cover;
-}
-
-.headline {
+  }
+  
+  .headline {
     font-size: 3rem;
     color: #bba270;
-}
-
-.subheadline {
+  }
+  
+  .subheadline {
     font-size: 1.5rem;
     color: #e1e1e1;
     margin-bottom: 1rem;
-}
-
-.subheadline .fa-icon {
+  }
+  
+  .subheadline .fa-icon {
     margin: 0 1rem;
-}
-
-.ctaButton {
+  }
+  
+  .ctaButton {
     background-color: #ff5722;
     border-radius: 50px;
-    margin-top: 2rem;
-}
-
-.robotContainer {
+    margin-top: 2rem; 
+  }
+  
+  .robotContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 2rem 0;
-}
-
-.robotImage {
+  }
+  
+  .robotImage {
     width: 200px;
     height: auto;
-}
-
-.speechBubble {
+  }
+  
+  .speechBubble {
     position: relative;
     background: #fff;
     color: #000;
@@ -47,9 +49,9 @@
     margin-top: 10px;
     width: 200px;
     text-align: center;
-}
-
-.speechBubble::before {
+  }
+  
+  .speechBubble::before {
     content: '';
     position: absolute;
     bottom: 100%;
@@ -58,27 +60,28 @@
     border-width: 10px;
     border-style: solid;
     border-color: transparent transparent #fff transparent;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  @media (max-width: 768px) {
     .headline {
-        font-size: 2.5rem;
+      font-size: 2.5rem;
     }
-
+  
     .subheadline {
-        font-size: 1.2rem;
+      font-size: 1.2rem;
     }
-
+  
     .ctaButton {
-        font-size: 1rem;
-        padding: 8px 16px;
+      font-size: 1rem;
+      padding: 8px 16px;
     }
-
+    
     .robotImage {
-        width: 80px;
+      width: 80px;
     }
-
+  
     .speechBubble {
-        width: 150px;
+      width: 150px;
     }
-}
+  }
+  
