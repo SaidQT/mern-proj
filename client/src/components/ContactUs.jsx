@@ -142,7 +142,7 @@ const ContactUs = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
             <FaPhoneAlt />
             <Typography variant="body1" sx={{ ml: 2 }}>
-             00972592905265
+             +970598963708
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
