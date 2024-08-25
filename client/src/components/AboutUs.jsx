@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
@@ -86,6 +87,7 @@ const TeamName = styled.h3`
   margin-top: 10px;
   font-size: 1.3rem;
 `;
+
 
 const StatsContainer = styled.div`
   display: flex;
@@ -201,6 +203,7 @@ const AboutUs = () => {
         </ChartContainer>
       </Section>
     </AboutContainer>
+
   );
 };
 

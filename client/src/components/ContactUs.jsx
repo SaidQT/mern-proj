@@ -142,13 +142,13 @@ const ContactUs = () => {
           <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
             <FaPhoneAlt />
             <Typography variant="body1" sx={{ ml: 2 }}>
-             +972-592905265
+             +970598963708
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
             <FaEnvelope />
             <Typography variant="body1" sx={{ ml: 2 }}>
-              Quizy@gmail.com
+              Quizizz@gmail.com
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
