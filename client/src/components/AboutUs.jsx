@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import Laith from './laith.png';
-import Ola from './Ola.png';
+import Ola from './ola.png';
 import Moon from './Moon.webp';
 import background2 from './background2.jpeg';
 
