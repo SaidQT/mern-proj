@@ -51,7 +51,7 @@ The Quizzes Platform is an interactive web-based application designed for educat
 **Register Page**:
 ---
 
-![Alt Text](./assets/register.png)
+![Alt Text](./images/register.png)
 
 
 
