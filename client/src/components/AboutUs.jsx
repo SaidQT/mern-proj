@@ -109,7 +109,7 @@ const About = () => {
           sticky={{ start: 1, end: 2.5 }}
           style={{ textAlign: 'left' , marginLeft: 100}}
         >
-          <img src={cat} alt="Cat" style={{ width: '400px', margin: '0 auto' }} />
+          {/* <img src={cat} alt="Cat" style={{ width: '400px', margin: '0 auto' }} /> */}
         </ParallaxLayer>
 
         {/* Final Section with Team */}
