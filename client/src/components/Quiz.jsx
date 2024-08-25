@@ -47,7 +47,7 @@ function Quiz() {
 
   return (
     <div>
-      <h1>{quiz.title}</h1>
+      <h1>{ quiz.title }</h1>
       {quiz.questionArray.map((question, index) => (
         <div key={index}>
           <h3>{question.questions}</h3>
