@@ -46,12 +46,5 @@ The Quizzes Platform is an interactive web-based application designed for educat
 - **Said Abu-Qtaish**: https://github.com/SaidQT
 - **Sajeda Abu-Ayyash**: https://github.com/SajedaAbu-Ayyash
 
-## Screenshots of the website (Quizizz):
-
-**Register Page**:
----
-
-![Alt Text](./images/register.png)
-
 
 
