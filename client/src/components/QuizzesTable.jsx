@@ -8,7 +8,7 @@ const QuizzesTable = ({ quizzes }) => {
   return (
     <TableContainer component={Paper}>
       <Typography variant="h6" gutterBottom component="div" sx={{ padding: 2 }}>
-        All Quizzes
+        All Quizzes 
       </Typography>
       <Table aria-label="quizzes table">
         <TableHead>
