@@ -68,7 +68,7 @@ const Home = () => {
         transition={{ delay: 1, duration: 1 }}
         className={styles.subheadline}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap', mb:'20px' }}>
           <FontAwesomeIcon icon={faHtml5} size="3x" color="#e44d26" title="HTML" />
           <FontAwesomeIcon icon={faCss3Alt} size="3x" color="#1572b6" title="CSS" />
           <FontAwesomeIcon icon={faJsSquare} size="3x" color="#f7df1e" title="JavaScript" />
