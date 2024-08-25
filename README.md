@@ -23,3 +23,12 @@ The Quizzes Platform is an interactive web-based application designed for educat
 - **Real-time Communication**: Socket.io.
 
 ## Features:
+
+- **Admin and User Interfaces**:
+  1. Separate interfaces tailored for admins and users.
+  2. Admin can create, update, and delete quizzes.
+  3. Users can browse and take quizzes, track their progress.
+
+- **Responsive Design**:
+  - Designed using React JS, ensuring seamless usage across various devices.
+
