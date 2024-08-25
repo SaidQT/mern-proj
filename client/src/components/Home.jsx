@@ -27,7 +27,7 @@ const Home = () => {
         flexDirection: 'column',
         textAlign: 'center',
         color: 'white',
-        backgroundSize: 'cover',
+        backgroundSize: ' cover ',
       }}
     >
       <Typography
