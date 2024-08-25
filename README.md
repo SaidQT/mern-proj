@@ -31,4 +31,17 @@ The Quizzes Platform is an interactive web-based application designed for educat
 
 - **Responsive Design**:
   - Designed using React JS, ensuring seamless usage across various devices.
+ 
+- **User Authentication**:
+  1. Secure login and registration with front-end and back-end validation.
+  2. Authenticated users have access to personalized features.
 
+- **Real-time Feedback & Analytics**:
+  1. Immediate feedback on quiz performance.
+  2. Score tracking and detailed analytics for users.
+
+## Contributors:
+
+- **Laith Amer**: https://github.com/laithamer23
+- **Said Abu-Qtaish**: https://github.com/SaidQT
+- **Sajeda Abu-Ayyash**: https://github.com/SajedaAbu-Ayyash
