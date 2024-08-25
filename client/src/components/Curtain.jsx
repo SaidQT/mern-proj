@@ -4,7 +4,7 @@ import './Curtain.css';
 
 const Curtain = ({ onCurtainComplete }) => {
   return (
-    <div className="curtain">
+    <div className="curtain" >
       <motion.div
         initial={{ x: 0 }}
         animate={{ x: '-100%' }}
