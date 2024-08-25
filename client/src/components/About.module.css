@@ -1,0 +1,51 @@
+.heading {
+    color: rgb(19, 16, 16);
+    text-align: center;
+    padding: 50px;
+    background: url('https://i.pinimg.com/originals/7f/24/e0/7f24e0c2e00f5386470ed24be5110ca8.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+.sectionTitle {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.sectionContent {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.teamName {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.statsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.statNumber {
+    font-size: 2rem;
+}
+
+.chartContainer {
+    margin-top: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body {
+    background: url('https://t4.ftcdn.net/jpg/03/66/59/39/360_F_366593980_vtwrIhBMTRUTAzn2SEKDEFNSMAEeoBOZ.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.AboutContainer {
+    background: none;
+}

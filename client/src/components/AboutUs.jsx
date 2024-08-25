@@ -1,156 +1,210 @@
-import React, { useRef } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import Laith from './laith.png';
-import Said from './said.jpg'
-import Sajeda from './sajeda.jpeg'
-import Moon from './moon.webp';
-import background2 from './background2.jpeg';
 
-const About = () => {
-  const ref = useRef();
+import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import laith from './laith.png';
+import Sajeda from './Sajeda.jpg';
+import profile from './profile.jpg';
+import CountUp from 'react-countup';
+import { Line } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import styles from './About.module.css';
 
+// Register the necessary components
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  LineElement,
+  PointElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
+// Example chart data
+const chartData = {
+  labels: ['Visitors', 'Users', 'New Sign-ups', 'Feedbacks'],
+  datasets: [
+    {
+      label: 'Statistics',
+      data: [1000, 500, 300, 150],
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 1,
+    },
+  ],
+};
+
+const AboutContainer = styled.div`
+  padding: 50px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: url('/path/to/purple-bubbles-background.gif') no-repeat center center fixed;
+  background-size: cover;
+`;
+
+const Section = styled(motion.div)`
+  margin-bottom: 70px;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 3rem;
+  margin-bottom: 30px;
+`;
+
+const SectionContent = styled.p`
+  font-size: 1.4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+`;
+
+const TeamContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+`;
+
+const TeamMember = styled.div`
+  text-align: center;
+`;
+
+const TeamImage = styled.img`
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const TeamName = styled.h3`
+  margin-top: 10px;
+  font-size: 1.3rem;
+`;
+
+
+const StatsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+`;
+
+const StatItem = styled.div`
+  text-align: center;
+`;
+
+const StatNumber = styled.h3`
+  font-size: 2.5rem;
+`;
+
+const ChartContainer = styled.div`
+  margin-top: 50px;
+  max-width: 700px;
+  margin: 0 auto;
+`;
+
+// Count-up component
+const CountUpItem = ({ end, startCount }) => (
+  <StatItem>
+    <StatNumber>
+      <CountUp start={startCount} end={end} duration={2} />
+    </StatNumber>
+  </StatItem>
+);
+
+const AboutUs = () => {
+  const [startCount, setStartCount] = useState(false);
+  const statsRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const statsTop = statsRef.current.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (statsTop < windowHeight) {
+        setStartCount(true);
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      <Parallax pages={4} ref={ref}>
-        {/* Background Layer 1 */}
-        <ParallaxLayer
-          offset={0}
-          speed={1}
-          factor={2}
-          style={{
-            backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${Moon})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0,
-            width: '100vw',
-            height: '100vh'
-          }}
-        >
-          <h1 style={{
-            position: 'absolute',
-            top: '30%',
-            left: '50%',
-            transform: 'translate(-50%, -30%)',
-            color: '#fff',
-            fontSize: '5rem',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-            zIndex: 1,
-            padding:'2rem',
-            background: "linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), #ffff",
-            borderRadius:'3rem'
+    <AboutContainer>
+      <h1 className={styles.heading}>About Us</h1>
+      <Section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionTitle className={styles.sectionTitle}>Our Service</SectionTitle>
+        <SectionContent className={styles.sectionContent}>
+          We offer interactive quizzes to test and enhance your knowledge in development languages like HTML, CSS, React, and more.
+          Our platform is designed to provide a fun and engaging way to learn, ensuring that you can track your progress and improve your skills.
+          Whether you're a beginner or an experienced developer, our quizzes cater to all levels.
+        </SectionContent>
+      </Section>
 
-          }}>
-            About Us
-          </h1>
-        </ParallaxLayer>
-  
-        {/* Our Mission Section */}
-        <ParallaxLayer
-          offset={1}
-          speed={1}
-          style={{
-            backgroundColor: '#f5f5f5',
-            padding: '1rem 2rem',
-            textAlign: 'center',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center',
-            width:'600px',
-            marginLeft:'500px',border:'1px solid black',
-          }}
-        >
-          <div>
-          <h2>Our Mission</h2>
-          <p>At our core, we aim to provide high-quality quizzes to help individuals enhance their skills in web development technologies like HTML, CSS, JavaScript, React, and MERN stack. Our goal is to make learning engaging and effective through interactive quizzes.</p>
-          </div>
-         
-        </ParallaxLayer>
+      <Section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionTitle className={styles.sectionTitle}>Our Mission</SectionTitle>
+        <SectionContent className={styles.sectionContent}>
+          Our mission is to make learning development languages fun and accessible to everyone through engaging quizzes.
+          We aim to build a community of learners who can support each other in their coding journeys.
+          Our goal is to empower individuals to achieve their full potential by providing them with the tools and resources they need to succeed.
+        </SectionContent>
+      </Section>
 
-        {/* Our Services Section */}
-        <ParallaxLayer
-          offset={2}
-          speed={1}
-          style={{
-            backgroundColor: '#f5f5f5',
-            padding: '1rem 2rem',
-            textAlign: 'center',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center',
-            width:'600px',
-            marginLeft:'500px',border:'1px solid black',
-          }}
-        >
-          <div>
-          
-            <h2>Our Services</h2>
-            <p>We offer a range of quizzes and resources tailored to various development technologies. Whether you're looking to test your knowledge in HTML, CSS, JavaScript, React, or the MERN stack, we provide comprehensive quizzes to help you master these skills.</p>
-            </div>
-          
-         
-        </ParallaxLayer>
-  
-        {/* Background Layer 2 */}
-        <ParallaxLayer
-          offset={3}
-          speed={1}
-          factor={2}
-          style={{
-            backgroundImage: `url(${background2})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0,
-            width: '100vw',
-            height: '100vh'
-          }}
-        />
+      <Section
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <SectionTitle className={styles.sectionTitle}>Our Team</SectionTitle>
+        <TeamContainer>
+          <TeamMember>
+            <TeamImage src={laith} alt="Laith Amer" />
+            <TeamName className={styles.teamName}>Laith Amer</TeamName>
+          </TeamMember>
+          <TeamMember>
+            <TeamImage src={Sajeda} alt="Sajeda Abu Ayyash" />
+            <TeamName className={styles.teamName}>Sajeda Abu Ayyash</TeamName>
+          </TeamMember>
+          <TeamMember>
+            <TeamImage src={profile} alt="Saeed Iqtaish" />
+            <TeamName className={styles.teamName}>Saeed Iqtaish</TeamName>
+          </TeamMember>
+        </TeamContainer>
+      </Section>
 
-        <ParallaxLayer
-          sticky={{ start: 1, end: 2.5 }}
-          style={{ textAlign: 'left' , marginLeft: 100}}
-        >
-          {/* <img src={cat} alt="Cat" style={{ width: '400px', margin: '0 auto' }} /> */}
-        </ParallaxLayer>
+      <Section ref={statsRef}>
+        <SectionTitle className={styles.sectionTitle}>Our Stats</SectionTitle>
+        <StatsContainer>
+          <CountUpItem end={1000} startCount={startCount ? 0 : 1000} />
+          <CountUpItem end={500} startCount={startCount ? 0 : 500} />
+          <CountUpItem end={300} startCount={startCount ? 0 : 300} />
+          <CountUpItem end={150} startCount={startCount ? 0 : 150} />
+        </StatsContainer>
+        <ChartContainer>
+          <Line data={chartData} />
+        </ChartContainer>
+      </Section>
+    </AboutContainer>
 
-        {/* Final Section with Team */}
-        <ParallaxLayer
-          offset={3.5}
-          speed={2}
-          style={{ textAlign: 'center', zIndex: 1, padding: '2rem' }}
-        >
-          <h2>Our Team</h2>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
-       
-            <div style={{ textAlign: 'center' }}>
-              <img
-                src={Laith}
-                alt="Laith"
-                style={{ width: '150px', borderRadius: '10px' }}
-              />
-              <p>Laith Amer</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <img
-                src={Sajeda}
-                alt="Sajeda"
-                style={{ width: '150px', borderRadius: '10px' }}
-              />
-              <p>Sajeda Abu-Ayyash</p>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <img
-                src={Said}
-                alt="Said"
-                style={{ width: '150px', borderRadius: '10px', height:'145px'}}
-              />
-              <p>Said Abu-Qtaish</p>
-            </div>
-          </div>
-        </ParallaxLayer>
-      </Parallax>
-    </div>
   );
 };
 
-export default About;
+export default AboutUs;
