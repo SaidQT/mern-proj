@@ -4,7 +4,7 @@ The Quizzes Platform is an interactive web-based application designed for educat
 
 # Technologies Used
 
-##Front-End:
+## Front-End:
 -**Frameworks & Libraries**: React, React DOM, Vite.
 -**Styling**: Material UI (MUI), Styled Components, MDB React UI Kit.
 -**Form Handling**: React Hook Form.
